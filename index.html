@@ -61,14 +61,13 @@
         .resume {
             padding: 1rem .5rem;
         }
-        .personal-information, .content-section__content {
+        .header, .content-section__content {
             padding-left: .65rem; padding-right: .65rem;
         }
         .personal-information__title, .content-section__sub-title {
             color: var(--dark-grey);
         }
-        .personal-information__name, .personal-information__contact-info {
-            margin-left: auto; margin-right: auto;
+        .personal-information, .personal-information__contact-info {
             width: fit-content;
         }
         .personal-information__title {
@@ -117,17 +116,23 @@
             .resume {
                 padding: .5in .55in .55in;
             }
+            .personal-information, .personal-information__contact-info {
+                margin-left: auto; margin-right: auto;
+            }
+            .personal-information__name, .personal-information__title {
+                display: inline;
+            }
         }
     </style>
 </head>
 <body>
     <main class="main-content">
         <div id="resume" class="resume">
-            <header id="personal_information" class="personal-information">
-                <h1 id="name" class="personal-information__name">
-                    Colin King-Bailey
-                    <span id="title" class="personal-information__title">Web Developer</span>
-                </h1>
+            <header class="header">
+                <div class="personal-information">
+                    <h1 id="name" class="personal-information__name">Colin King-Bailey</h1>
+                    <h3 id="title" class="personal-information__title">Web Developer</h3>
+                </div>
                 <address id="contact_information" class="personal-information__contact-info">
                     <a href="mailto:ckingbailey@gmail.com" class="personal-information__contact-info-link">ckingbailey@gmail.com</a>
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="10" height="10">
