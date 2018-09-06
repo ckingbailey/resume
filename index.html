@@ -27,7 +27,7 @@
             font-weight: normal;
         }
         ul {
-            padding-left: 2.15rem;
+            padding-left: 1.25rem;
             list-style-type: none;
         }
         li::before {
@@ -41,7 +41,6 @@
         }
         a {
             text-decoration: none;
-            /* color: #18c; */
             color: #249;
         }
         a:visited {
@@ -60,27 +59,20 @@
             background-color: white;
         }
         .resume {
-            padding: .45in .55in .55in;
+            padding: 1rem .5rem;
         }
-        .personal-information, .content-section__content {
+        .header, .content-section__content {
             padding-left: .65rem; padding-right: .65rem;
         }
         .personal-information__title, .content-section__sub-title {
             color: var(--dark-grey);
         }
-        .personal-information__name, .personal-information__contact-info {
-            margin-left: auto; margin-right: auto;
-            width: fit-content;
-        }
         .personal-information__title {
             font-size: 1.15rem;
             font-style: italic;
         }
-        .personal-information__contact-info-divider {
-            font-weight: bold;
-        }
-        .section-divider {
-            border-top: 2px solid var(--mid-grey);
+        .personal-information__contact-info-link {
+            display: block;
         }
         .content-section {
             text-align: left;
@@ -97,9 +89,6 @@
             text-align: left;
             color: var(--near-black);
         }
-        .content-section__heading-divider {
-            border-top: 1px solid var(--near-black);
-        }
         .content-section__content, .content-section__sub-title, .personal-information__contact-info {
             font-size: .85rem;
         }
@@ -114,25 +103,45 @@
         .text-grey {
             color: var(--dark-grey);
         }
+        @media screen and (min-width: 768px) {
+            ul {
+                padding-left: 2.15rem;
+            }
+            .resume {
+                padding: .5in .55in .55in;
+            }
+            .personal-information, .personal-information__contact-info {
+                margin-left: auto; margin-right: auto;
+                width: fit-content;
+            }
+            .personal-information__name, .personal-information__title {
+                display: inline;
+            }
+            .personal-information__contact-info-link {
+                display: inline;
+            }
+            .personal-information__contact-info-link:not(:last-child)::after {
+                content: '';
+                display: inline-block;
+                margin-left: .25rem;
+                width: 10px;
+                height: 10px;
+                background-image: url('data:image/svg+xml;charset=utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="10" height="10"><polygon points="3 3, 7 3, 7 7, 3 7" fill="none" stroke-width="1" stroke="#333" /></svg>');
+            }
+        }
     </style>
 </head>
 <body>
     <main class="main-content">
         <div id="resume" class="resume">
-            <header id="personal_information" class="personal-information">
-                <h1 id="name" class="personal-information__name">
-                    Colin King-Bailey
-                    <span id="title" class="personal-information__title">Web Developer</span>
-                </h1>
+            <header class="header">
+                <div class="personal-information">
+                    <h1 id="name" class="personal-information__name">Colin King-Bailey</h1>
+                    <h3 id="title" class="personal-information__title">Web Developer</h3>
+                </div>
                 <address id="contact_information" class="personal-information__contact-info">
                     <a href="mailto:ckingbailey@gmail.com" class="personal-information__contact-info-link">ckingbailey@gmail.com</a>
-                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="10" height="10">
-                        <polygon points="3 3, 7 3, 7 7, 3 7" fill="none" stroke-width="1" stroke="var(--near-black)" />
-                    </svg>
                     <a href="https://github.com/ckingbailey" class="personal-information__contact-info-link">github.com/ckingbailey</a>
-                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="10" height="10">
-                        <polygon points="3 3, 7 3, 7 7, 3 7" fill="none" stroke-width="1" stroke="var(--near-black)" />
-                    </svg>
                     <a href="https://www.linkedin.com/in/ckingbailey" class="personal-information__contact-info-link">linkedin.com/in/ckingbailey</a>
                 </address>
             </header>
